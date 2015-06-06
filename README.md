@@ -1,5 +1,7 @@
 # avr32webboot
 
+HTML5 webinterface and bootloader for AVR32
+
 ## Release V1.0
 
 Allows to flash an AVR32 via a nice looking HTML5 webinterface. 
@@ -29,7 +31,7 @@ Contributions and ports welcome!
 
 ## Getting started
 
-1. Download avr32webboot.hex from the WIKI and flash it on your EVK1100. 
+1. Download avr32webboot.hex from http://www.taurob.com/U-ECU/binaries/ and flash it on your EVK1100. 
 2. Press the PB0 button on startup to initialize the EEPROM for the first time.
 3. go to step 4.
 
