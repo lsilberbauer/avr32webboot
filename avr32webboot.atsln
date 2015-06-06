@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Kernel", "Kernel\Kernel.cproj", "{A3A85914-39D1-47FE-91D1-5609F690445D}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Bootloader", "Bootloader\Bootloader.cproj", "{5E20F44F-2DEE-4E80-AC57-EE4906D9B9C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3A85914-39D1-47FE-91D1-5609F690445D}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A3A85914-39D1-47FE-91D1-5609F690445D}.Debug|AVR.Build.0 = Debug|AVR
+		{A3A85914-39D1-47FE-91D1-5609F690445D}.Release|AVR.ActiveCfg = Release|AVR
+		{A3A85914-39D1-47FE-91D1-5609F690445D}.Release|AVR.Build.0 = Release|AVR
+		{5E20F44F-2DEE-4E80-AC57-EE4906D9B9C2}.Debug|AVR.ActiveCfg = Debug|AVR
+		{5E20F44F-2DEE-4E80-AC57-EE4906D9B9C2}.Debug|AVR.Build.0 = Debug|AVR
+		{5E20F44F-2DEE-4E80-AC57-EE4906D9B9C2}.Release|AVR.ActiveCfg = Release|AVR
+		{5E20F44F-2DEE-4E80-AC57-EE4906D9B9C2}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+git does not like empty directories - AVR Studio needs this directory

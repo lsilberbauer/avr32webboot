@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>avr32webboot</title>
+		<base href="http://www.taurob.com/U-ECU/">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#status">Status</a></li>
+					<li><a href="#registry">Registry</a></li>
+					<li><a href="#firmwareupdate">Firmware Update</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u">
+							<span class="image fit"><img src="images/Board.png" alt="" /></span>
+						</div>
+						<div class="8u">
+							<header>
+								<h1><strong>avr32webboot</strong> ready.</h1>
+							</header>
+							<p>Loaded Application: <!--#application_info--></p>
+							<a href="https://github.com/silberbauer/avr32webboot" class="button big scrolly">Visit our GitHub Repository</a>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Status -->
+			<div class="wrapper style2">
+				<article id="status">
+					<header>
+						<h2>Status</h2>
+						<p>Press refresh to update information.</p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+								<section class="box style1">
+									<span class="icon featured fa-list-alt"></span>
+									<h3>FreeRTOS Task List</h3>
+									<p>
+										<table class="default">
+											<thead>
+												<th>Task</th>
+												<th>Status</th>
+												<th>Priority</th>
+												<th># free bytes</th>
+												<th>Task Number</th>
+											</thead>
+											<!--#task_list-->
+										</table>
+									</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Registry -->
+			<div class="wrapper style2">
+				<article id="registry">
+					<header>
+						<h2>Registry</h2>
+						<form name="reboot" method="post">
+							<input type="hidden" name="action" value="reboot">
+						</form>
+						<p>Parameters are stored in external EEPROM and survive firmware updates. Changes might require a <a href="JavaScript:{}" onClick="reboot.submit();">reboot</a>.</p>
+
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="12u">
+								<section class="box style1">
+									<span class="icon featured fa-suitcase"></span>
+									<h3>Registry Contents</h3>
+									<p>
+										<table class="default" id="registry_table">
+											<form name="registry" method="post">
+												<input type="hidden" name="action" value="registry_set">
+												<input type="hidden" name="key" value="">
+												<input type="hidden" name="value" value="">
+											</form>
+
+											<thead>
+												<th>Key Name</th>
+												<th style="width:200px">Current Value</th>
+												<th style="width:200px">&nbsp;</th>
+											</thead>
+											<!--#registry_content-->
+										</table>
+									</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<!-- Firmware Update -->
+			<div class="wrapper style4">
+				<article id="firmwareupdate" class="container 75%">
+					<header>
+						<p>&nbsp;</p>
+						<h2>Firmware Update</h2>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<p id="firmware_message">&nbsp;</p>
+					</header>
+
+					<div class="row" id="confirm_firmware">
+						<div class="6u">
+							<form method="post">
+								<input type="hidden" name="action" value="firmware_keep">
+								<input type="submit" value="Keep Changes" style="background: #11BB11;">
+							</form>
+						</div>
+						<div class="6u">
+							<form method="post">
+							<input type="hidden" name="action" value="firmware_reject">
+							<input type="submit" value="Reject Changes" style="background: #BB1111;">
+							</form>
+						</div>
+					</div>
+					<p>&nbsp;</p>
+					<div id="upload_firmware">
+						<div class="row">
+							<div class="12u">
+								<form enctype="multipart/form-data" method="post">
+									<div>
+										<div class="row">
+											<div class="6u fileUpload btn btn-primary">
+											<span>Select .srec file</span>
+												<input type="file" name="firmware" accept=".srec" class="upload" />
+											</div>
+
+											<div class="6u">
+												<input type="submit" value="Upload" style="bottom: 25px;">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<p>&nbsp;</p>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; 2015 taurob GmbH. All rights reserved.</li>
+						</ul>
+					</footer>
+				</article>
+			</div>
+
+			<script language="JavaScript">
+
+			var seconds = 30;
+
+			$.fn.scrollView = function () {
+				return this.each(function () {
+					$('html, body').animate({
+						scrollTop: $(this).offset().top
+					}, 1000);
+				});
+			}
+
+			function firmware_status(status)
+			{
+				switch (status)
+				{
+					case 0:
+						document.getElementById("firmware_message").innerHTML = "Please select a valid .srec file.";
+						document.getElementById('confirm_firmware').style.visibility = 'hidden';
+						break;
+					case 1:
+						document.getElementById('upload_firmware').style.visibility = 'hidden';
+						document.getElementById('confirm_firmware').style.visibility = 'hidden';
+						$('#firmwareupdate').scrollView();
+
+						setInterval(function ()
+						{
+							document.getElementById("firmware_message").innerHTML = "Upload successful, reloading in " + seconds + " sec.";
+							seconds--;
+
+							if (seconds < 0)
+							{
+								window.location.href = window.location.href;
+							}
+			   			}, 1000);
+						break;
+
+					case 2:
+						/* confirm upload */
+						document.getElementById("firmware_message").innerHTML = "Would you like to keep the newly uploaded firmware upon next reset?";
+						document.getElementById('upload_firmware').style.visibility = 'hidden';
+						$('#firmwareupdate').scrollView();
+						break;
+
+					case 3:
+						/* upload failed */
+						document.getElementById("firmware_message").innerHTML = "Upload failed. Please check the log for an error description.";
+						document.getElementById('confirm_firmware').style.visibility = 'hidden';
+						$('#firmwareupdate').scrollView();
+						break;
+
+				}
+			}
+
+			function registry_submit(key)
+			{
+				var list = document.getElementsByName(key);
+
+				if (list.length != 1)
+				{
+					window.alert("Cannot set key - error in JavaScript");
+				}
+				else
+				{
+					document.forms['registry'].elements['key'].value = key;
+					document.forms['registry'].elements['value'].value = list[0].value;
+					document.forms['registry'].submit();
+				}
+			}
+
+			function registry_convert_table()
+			{
+				var table = document.getElementById("registry_table");
+				for (var i = 1, row; row = table.rows[i]; i++)
+				{
+				   var key_name = row.cells[0].innerHTML;
+				   var key_value = row.cells[1].innerHTML;
+				   var key_readonly = row.cells[2].innerHTML;
+				   var disabled_text = "";
+
+				   if (key_readonly == 1)
+				   {
+				       disabled_text = " disabled ";
+				   }
+
+				   row.cells[1].innerHTML = "<input name='" + key_name + "' value='" + key_value + "'" + disabled_text + ">";
+				   row.cells[2].innerHTML = "<input type='button' value='Change' class='registry' onClick='registry_submit(\"" + key_name + "\")' " + disabled_text + ">";
+				}
+			}
+
+			registry_convert_table();
+			</script>
+
+            <!--#firmware_status-->
+
+	</body>
+</html>
