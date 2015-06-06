@@ -16,7 +16,7 @@ Contributions and ports welcome!
 * FreeRTOS V8.2.0
 * LwIP 1.4.1 + httpserver_raw app + SSI + POST support
 * .srec File Parser (checks parity and start address)
-* Automatically creates a backup of the running programm in AT45DBX external flash memory
+* Automatically creates a backup of the running program in AT45DBX external flash memory
 * Implements a simply registry: Change parameters like IP address via the webinterface and tune your application on-the-fly
 * Easy to use SSI (Server Side Includes) and HTTP-POST handling functions
 * Application stub for easy extensibility
@@ -27,6 +27,7 @@ Contributions and ports welcome!
 * Atmel EVK1100 Demo Board
 * JTAG programmer
 * Ethernet cable from your PC to the Demo Board
+* Recommended: Internet connection of your PC (via a second LAN adapter or WiFi) for HTML5 features
 * Optional: A serial cable connected to UART1 with 115200 baud, 8N1 to display debug info
 
 ## Getting started
@@ -66,6 +67,15 @@ https://groups.google.com/d/forum/avr32webboot
 
 See LICENSE.txt
 
-written by
-Lukas Silberbauer
+## Credits
+
+http://www.freertos.org/
+http://savannah.nongnu.org/projects/lwip/
+http://www.atmel.com/tools/avrsoftwareframework.aspx?tab=overview
+http://html5up.net/miniport
+
+
+written on June 6, 2015 by Lukas Silberbauer
+
+
 (c) 2015 taurob GmbH
