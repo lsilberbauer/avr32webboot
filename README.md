@@ -69,10 +69,10 @@ See LICENSE.txt
 
 ## Credits
 
-http://www.freertos.org/
-http://savannah.nongnu.org/projects/lwip/
-http://www.atmel.com/tools/avrsoftwareframework.aspx?tab=overview
-http://html5up.net/miniport
+* http://www.freertos.org/
+* http://savannah.nongnu.org/projects/lwip/
+* http://www.atmel.com/tools/avrsoftwareframework.aspx?tab=overview
+* http://html5up.net/miniport
 
 
 written on June 6, 2015 by Lukas Silberbauer
