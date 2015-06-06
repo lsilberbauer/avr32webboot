@@ -545,11 +545,13 @@
     <Compile Include="src\ASF\avr32\drivers\adc\adc.c">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="LICENSE.txt">
+    <None Include="..\LICENSE.txt">
       <SubType>compile</SubType>
+      <Link>LICENSE.txt</Link>
     </None>
-    <None Include="README.md">
+    <None Include="..\README.md">
       <SubType>compile</SubType>
+      <Link>README.md</Link>
     </None>
     <None Include="src\ASF\avr32\drivers\adc\adc.h">
       <SubType>compile</SubType>
